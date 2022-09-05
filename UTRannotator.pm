@@ -366,18 +366,18 @@ sub uAUG_gained {
 }
 
 sub uSTOP_gained {
-	# Description: annotate whether a five_prime_UTR_variant creates new stop codon. It only evaluate SNVs.
+  # Description: annotate whether a five_prime_UTR_variant creates new stop codon. It only evaluate SNVs.
 
-	my ($self, $variant_info,$UTR_info, %kozak_strength) = @_;
+  my ($self, $variant_info,$UTR_info, %kozak_strength) = @_;
 
-	my $chr = $variant_info->{chr};
-	my $pos = $variant_info->{pos};
-	my $ref = $variant_info->{ref};
-	my $alt = $variant_info->{alt};
+  my $chr = $variant_info->{chr};
+  my $pos = $variant_info->{pos};
+  my $ref = $variant_info->{ref};
+  my $alt = $variant_info->{alt};
 
-	my @sequence = split //, $UTR_info->{seq};
-	my $strand = $UTR_info->{strand};
-    my $utr_length = @sequence;
+  my @sequence = split //, $UTR_info->{seq};
+  my $strand = $UTR_info->{strand};
+  my $utr_length = @sequence;
 
 	#return annotators
 	my $uSTOP_gained_ref_StartDistanceToCDS = "";  # the distance between the uAUG of the disrupting uORF to CDS
